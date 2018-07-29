@@ -1,28 +1,37 @@
-﻿using System;
+﻿using Eto.Forms;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Sizer
 {
-    public class Program{
+	static class Program
+	{
 		[STAThread]
-		public static void Main(string[] args){
-			Console.WriteLine("TEst");
+		static void Main(string[] args)
+		{
+			Console.WriteLine("Hello");
 
+			//new Eto.Forms.Application().Run(new MyForm());
+			//new Application(new Eto.Wpf.Platform()).Run(new MainForm());
 
-			new Eto.Forms.Application().Run(new MyForm());
-
+			Console.ReadKey();
 		}
 	}
 
+	class MyForm : Form{
 
-	class MyForm : Eto.Forms.Form
-{
-	public MyForm()
-	{
-		// sets the client (inner) size of the window for your content
-		this.ClientSize = new Eto.Drawing.Size(600, 400);
+		public MyForm(){
 
-		this.Title = "Hello, Eto.Forms";
+			this.ClientSize = new Eto.Drawing.Size(600, 400);
+
+			this.Title = "Hello, Eto.Forms";
+
+
+		}
+
 	}
-}
 
 }

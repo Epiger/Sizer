@@ -5,12 +5,17 @@
     "tasks": [
         {
             "label": "build",
-            "command": "dotnet build",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Sizer.csproj"
+            ],
             "type": "shell",
             "presentation": {
                 "reveal": "silent"
             },
             "problemMatcher": "$msCompile"
-        }
+        },
+        
     ]
 }
