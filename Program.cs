@@ -40,6 +40,34 @@ namespace Sizer
 
 			};
 
+			Menu.QuitItem = new Command((sender, e) => Application.Instance.Quit()){
+				MenuText = "Quit",
+				Shortcut = Application.Instance.CommonModifier | Keys.Q
+			};
+
+
+			var aboutItem = new ButtonMenuItem{Text = "About"};
+			aboutItem.Click += (sender, e) => {
+				
+				Dialog dlg = new Dialog{
+					Content = new Label{Text = "About"},
+					ClientSize = new Eto.Drawing.Size(200, 200)
+				};
+				dlg.ShowModal(this);
+
+			};
+
+			Menu.AboutItem = aboutItem;
+
+
+			ToolBar = new ToolBar{
+				Items = {
+					new MCommand(),
+					new SeparatorToolItem(),
+					new ButtonToolItem{Text = "Teee mit Zucker"}
+				}
+			};
+
 		}
 	}
 
