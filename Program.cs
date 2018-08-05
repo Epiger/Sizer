@@ -1,5 +1,6 @@
 ﻿using System;
 using Eto.Forms;
+using Eto.Drawing;
 
 namespace Sizer
 {
@@ -21,6 +22,30 @@ namespace Sizer
 			this.ClientSize = new Eto.Drawing.Size(600, 400);
 
 			this.Title = "Hello, Eto.Forms";
+
+
+			TableLayout layout = new TableLayout();
+			layout.Spacing = new Size(5,5);
+			layout.Padding = new Padding(10,10,10,10);
+
+
+			layout.Rows.Add(new TableRow(
+				new TableCell(new Label{Text = "First Column"}, true),
+				new TableCell(new ListBox{Style = "main-list"}, true),
+				new Label{Text = "Third Column"}
+			));
+
+			layout.Rows.Add(new TableRow(
+				new TextBox { Text = "Some Text" },
+				new DropDown { Items = { "Item 1", "Item 2", "Item 3" } },
+				new CheckBox { Text = "A checkbox" }
+			));
+
+			layout.Rows.Add(new TableRow{ScaleHeight = true});
+
+
+			Content = layout;
+
 
 			Menu = new MenuBar{
 				Items = {
